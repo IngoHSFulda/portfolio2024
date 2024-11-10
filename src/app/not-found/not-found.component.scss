@@ -1,0 +1,91 @@
+/* src/app/not-found/not-found.component.scss */
+
+.container {
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Vertical centering within the container
+    justify-content: center; // Horizontal centering within the container
+    text-align: center;
+    height: 100vh; // Full viewport height
+    margin: auto; // Center container on the page
+  }
+  
+  h1 {
+    font-size: 10rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+  
+    @media (max-width: 768px) {
+      font-size: 6rem;
+    }
+  
+    @media (max-width: 480px) {
+      font-size: 4rem;
+    }
+  }
+  
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out;
+  
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
+  }
+  
+  a.back-home {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+  
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+  
+    @media (max-width: 768px) {
+      padding: 10px 25px;
+      font-size: 0.9rem;
+    }
+  
+    @media (max-width: 480px) {
+      padding: 8px 20px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

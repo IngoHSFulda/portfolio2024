@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; // Reduziertes Padding für mehr Kompaktheit
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.timeline {
+    position: relative;
+    width: 90%;
+    max-width: 700px; // Angepasste Maximalbreite für eine kompaktere Darstellung
+    padding: 20px 0;
+    margin: 0 auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background-color: #5a5a5a;
+        transform: translateX(-50%);
+    }
+
+    .event {
+        position: relative;
+        width: 45%;
+        padding: 10px 15px; // Reduziertes Padding
+        background-color: #9fd481;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px; // Geringerer Abstand zwischen den Events
+        border-radius: 6px;
+
+        h2 {
+            font-size: 1em; // Kleinere Schriftgröße für Überschriften
+            color: #5a5a5a;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin: 3px 0;
+            font-size: 0.9em; // Kleinere Schriftgröße für Absätze
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            width: 8px;
+            height: 8px;
+            background-color: #5a5a5a;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        &.left {
+            left: 50%;
+            text-align: right;
+            transform: translateX(-100%); // Verschiebe das Element nach links, sodass die rechte Kante an der Mitte ist
+
+            &::before {
+                right: -4px; // Positioniere den Punkt direkt auf der zentralen Linie
+            }
+        }
+
+        &.right {
+            left: 50%;
+            text-align: left;
+            transform: translateX(0); // Keine Verschiebung, Event bleibt rechts von der Linie
+
+            &::before {
+                left: -4px; // Positioniere den Punkt direkt auf der zentralen Linie
+            }
+        }
+    }
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .event {
+        width: calc(100% - 40px);
+        left: 0 !important;
+        text-align: left !important;
+
+        &::before {
+            left: -4px;
+        }
+    }
+}
+

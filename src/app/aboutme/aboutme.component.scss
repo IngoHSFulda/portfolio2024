@@ -1,0 +1,31 @@
+
+$primary-color:#4d5063;
+$text-color: white;
+$content-color: #b2af9c;
+.content {
+    background-color: $content-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    height: 84vh; // Full viewport height
+
+    .text-section {
+      color: $text-color;
+      flex: 1;
+      text-align: center;
+      padding-right: 0px;
+    }
+
+    .image-section {
+        flex: 1;
+        text-align: center;
+  
+        img {
+          max-width: 50%;
+          height: auto;
+          border-radius: 50%; // Abgerundete Ecken für das Bild
+        }
+      }
+}

@@ -1,0 +1,102 @@
+/* src/app/main.scss */
+
+// Farben als Variablen definieren
+$primary-color: #4d5063;
+$text-color: white;
+$content-color: #b2af9c;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;  // Centers vertically
+  justify-content: center; // Centers horizontally
+  min-height: 100vh;
+  background-color: #4d5063; // Adjust background color as desired
+}
+
+
+// Grundlegendes Styling
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .main {
+    height: 82vh; // Full viewport height
+    align-items: center; /* Horizontale Zentrierung */
+    justify-content: center;
+  } 
+
+  // Navigation oben rechts
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: $primary-color;
+    padding: 10px;
+    
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      
+      li {
+        a {
+          color: $text-color;
+          text-decoration: none;
+          font-weight: bold;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  // Flexbox in der Mitte
+  .social-media {
+    display: flex;
+    gap: 20px; // Vergrößert den Abstand zwischen den Icons
+    justify-content: center; // Zentriert die Icons horizontal
+    margin: 0 auto; // Zentriert den gesamten Social Media Container
+    padding-top: 10px; // Optional: Abstand vom oberen Text
+   
+    .social-icon {
+      padding: 8px;
+      border-radius: 5px;
+      text-decoration: none;
+      align-items: right;
+
+      &.xing img,
+      &.linkedin img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  .content {
+    background-color: $content-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+
+    .text-section {
+      color: $text-color;
+      flex: 1;
+      text-align: center;
+      padding-right: 0px;
+    }
+  }
+
+  // Footer
+  .footer {
+    background-color: $primary-color;
+    color: $text-color;
+    text-align: center;
+    padding: 15px 0;
+  }
+}
