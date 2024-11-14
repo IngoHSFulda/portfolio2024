@@ -1,0 +1,14 @@
+version: '3'
+services:
+  calipharma:
+    image: calipharmafrontend:1
+    container_name: calipharma
+    ports:
+      - "8000:80"
+    restart: always
+    networks:
+      - calipharmanetwork
+
+networks:
+  calipharmanetwork:
+    driver: bridge
